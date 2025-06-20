@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{ produtoSelecionado?.title }}</ion-title>
+    <ion-text>
+      <h2>{{ produtoSelecionado?.rating.rate }}</h2>
+    </ion-text>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+
+  <ion-card *ngIf="produtoSelecionado">
+    <img alt="{{ produtoSelecionado.title }}" [src]="produtoSelecionado.image" />
+    <ion-card-content>
+      <p>{{ produtoSelecionado.description }}</p>
+      <p>Preço: {{ produtoSelecionado.price | currency: 'BRL' }}</p>
+      <ion-button expand="full" color="primary">Adicionar ao Carrinho</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+  <ion-button expand="full" color="secondary">Voltar</ion-button>
+</ion-content>

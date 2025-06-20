@@ -34,13 +34,17 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card>
-    <img alt="Produto 2" src="https://ionicframework.com/docs/img/demos/card-media.png" />
+  <ion-card *ngFor="let produto of produtos" (click)="navegarParaDetalhes(produto)">
+    <img alt="{{produto.name}}" [src]="produto.image" />
     <ion-card-header>
-      <ion-card-title>Produto 2</ion-card-title>
+      <ion-card-title> {{ produto.name }} </ion-card-title>
     </ion-card-header>
     <ion-card-content>
-      Descrição produto 2
+      <p> {{ produto.description }} </p>
+      <p> Preço: {{ produto.price | currency: 'BRL' }} </p>
+      <ion-button expand="full" color="primary">
+        Adicionar ao Carrinho
+      </ion-button>
     </ion-card-content>
   </ion-card>
 </ion-content>

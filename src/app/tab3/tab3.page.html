@@ -1,11 +1,26 @@
-<ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Perfil
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
+<ion-content>
+  <ion-card class="profile-container">
+    <ion-card-header class="profile-header" text-center>
+      <ion-avatar>
+        <img src="assets/profile-placeholder.png" alt="Foto de Perfil">
+      </ion-avatar>
+      <ion-card-title class="profile-name">Nome do Usuário</ion-card-title>
+      <ion-text color="medium" class="profile-username">&#64;usuario</ion-text>
+    </ion-card-header>
+    <ion-card-content class="profile-details">
+      <ion-list lines="none">
+        <ion-item>
+          <ion-label><strong>Email:</strong> usuario&#64;email.com</ion-label>
+        </ion-item>
 
-<ion-content [fullscreen]="true">
-
+        <ion-item>
+          <ion-label><strong>Sobre:</strong> Breve descrição sobre o usuário.</ion-label>
+        </ion-item>
+      </ion-list>
+      <div class="profile-actions" style="margin-top: 16px; display: flex; gap: 8px;">
+        <ion-button expand="block" color="primary">Editar Perfil</ion-button>
+        <ion-button expand="block" color="danger">Sair</ion-button>
+      </div>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
