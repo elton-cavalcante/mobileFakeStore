@@ -1,0 +1,32 @@
+:host {
+  --ion-background-color: #f4f4f4;
+  display: block;
+}
+
+ion-header {
+  --background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  ion-toolbar {
+    --color: #222;
+    font-weight: 600;
+    padding-inline: 16px;
+  }
+}
+
+ion-menu-button {
+  font-size: 2rem;
+  color: #fff;
+}
+
+ion-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+ion-content {
+  --padding-top: 16px;
+  --padding-bottom: 90px;
+}

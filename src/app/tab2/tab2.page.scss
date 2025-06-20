@@ -14,6 +14,35 @@ ion-header {
   }
 }
 
+ion-menu {
+  --background: #333;
+  /* cinza escuro */
+  color: #fff;
+  /* textos brancos */
+}
+
+ion-header,
+ion-toolbar,
+ion-content,
+ion-list,
+ion-item,
+ion-label {
+  background-color: transparent;
+  /* herda o cinza do menu */
+  color: #000 !important;
+  /* garante o texto branco */
+}
+
+ion-item {
+  --background: transparent;
+  --color: #fff;
+}
+
+ion-menu::part(backdrop) {
+  background: rgba(0, 0, 0, 0.4);
+  /* fundo escurecido ao abrir */
+}
+
 ion-menu-button {
   font-size: 2rem;
   color: #fff;
@@ -29,6 +58,14 @@ ion-title {
 ion-content {
   --padding-top: 16px;
   --padding-bottom: 90px;
+}
+
+h1 {
+  font-size: 1.8rem;
+  font-weight: 600;
+  color: #333;
+  margin: 16px;
+  text-align: center;
 }
 
 
@@ -101,11 +138,16 @@ ion-card {
       margin: 6px 0;
     }
 
+    p strong {
+      color: #fff;
+      font-size: 1.3rem;
+      font-weight: 600;
+    }
+
     .descricao-limitada {
       overflow: hidden;
       display: -webkit-box;
       -webkit-line-clamp: 3;
-      /* Limita a 3 linhas */
       -webkit-box-orient: vertical;
       text-overflow: ellipsis;
     }
