@@ -34,17 +34,20 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-card *ngFor="let produto of produtos" (click)="navegarParaDetalhes(produto)">
-    <img alt="{{produto.name}}" [src]="produto.image" />
-    <ion-card-header>
-      <ion-card-title> {{ produto.name }} </ion-card-title>
-    </ion-card-header>
-    <ion-card-content>
-      <p> {{ produto.description }} </p>
-      <p> Preço: {{ produto.price | currency: 'BRL' }} </p>
-      <ion-button expand="full" color="primary">
-        Adicionar ao Carrinho
-      </ion-button>
-    </ion-card-content>
-  </ion-card>
+  <div class="grid-produtos">
+    <ion-card *ngFor="let produto of produtos">
+  <ion-img [src]="produto.image"></ion-img>
+  <ion-card-header>
+    <ion-card-title>{{ produto.title }}</ion-card-title>
+  </ion-card-header>
+  <ion-card-content>
+    <p class="descricao-limitada">{{ produto.description }}</p>
+    <p><strong>R$ {{ produto.price }}</strong></p>
+    <ion-button expand="full" color="primary" [routerLink]="['/tabs/tab1/produto-detalhes', produto.id]">
+      Ver Detalhes
+    </ion-button>
+  </ion-card-content>
+</ion-card>
+
+  </div>
 </ion-content>

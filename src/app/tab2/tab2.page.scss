@@ -1,0 +1,106 @@
+:host {
+  --ion-background-color: #f4f4f4;
+  display: block;
+}
+
+ion-header {
+  --background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+
+  ion-toolbar {
+    --color: #222;
+    font-weight: 600;
+    padding-inline: 16px;
+  }
+}
+
+ion-menu-button {
+  font-size: 2rem;
+  color: #fff;
+}
+
+ion-title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+}
+
+ion-content {
+  padding: 16px;
+}
+
+.grid-produtos {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+
+  @media (min-width: 600px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (min-width: 900px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  @media (min-width: 1200px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+ion-card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.01);
+  }
+
+  ion-img {
+    height: 200px;
+    object-fit: contain;
+    background: #fff;
+  }
+
+  ion-card-header {
+    background: #fff;
+
+    ion-card-title {
+      font-size: 1.1rem;
+      color: #333;
+      font-weight: 600;
+      min-height: 48px; /* Título consistente */
+    }
+  }
+
+  ion-card-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    font-size: 0.95rem;
+    color: #555;
+
+    p {
+      margin: 6px 0;
+    }
+
+    .descricao-limitada {
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 3; /* Limita a 3 linhas */
+      -webkit-box-orient: vertical;
+      text-overflow: ellipsis;
+    }
+
+    ion-button {
+      margin-top: 12px;
+    }
+  }
+}
