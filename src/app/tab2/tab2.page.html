@@ -36,18 +36,18 @@
 <ion-content [fullscreen]="true">
   <div class="grid-produtos">
     <ion-card *ngFor="let produto of produtos">
-  <ion-img [src]="produto.image"></ion-img>
-  <ion-card-header>
-    <ion-card-title>{{ produto.title }}</ion-card-title>
-  </ion-card-header>
-  <ion-card-content>
-    <p class="descricao-limitada">{{ produto.description }}</p>
-    <p><strong>R$ {{ produto.price }}</strong></p>
-    <ion-button expand="full" color="primary" [routerLink]="['/tabs/tab1/produto-detalhes', produto.id]">
-      Ver Detalhes
-    </ion-button>
-  </ion-card-content>
-</ion-card>
+      <ion-img [src]="produto.image"></ion-img>
+      <ion-card-header>
+        <ion-card-title>{{ produto.title }}</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <p class="descricao-limitada">{{ produto.description }}</p>
+        <p><strong>R$ {{ produto.price | number:'1.2-2' }}</strong></p>
+        <ion-button expand="full" color="primary" [routerLink]="['/tabs/tab1/produto-detalhes', produto.id]">
+          Ver Detalhes
+        </ion-button>
+      </ion-card-content>
+    </ion-card>
 
   </div>
 </ion-content>
