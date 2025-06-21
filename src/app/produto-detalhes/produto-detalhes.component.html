@@ -1,9 +1,35 @@
-<ion-header>
+<ion-menu contentId="main-content">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>Fake Store</ion-title>
+    </ion-toolbar>
+  </ion-header>
+  <ion-content class="ion-padding">
+    <ion-list>
+      <ion-item>
+        <ion-label>Eletrônicos</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Roupas Femininas</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Roupas Masculinas</ion-label>
+      </ion-item>
+      <ion-item>
+        <ion-label>Joalheria</ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-menu>
+
+<ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>{{ produtoSelecionado?.title }}</ion-title>
-    <ion-text>
-      <h2>{{ produtoSelecionado?.rating.rate }}</h2>
-    </ion-text>
+    <ion-title>
+      Fake Store
+    </ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button id="main-content"></ion-menu-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 <ion-content>
@@ -11,6 +37,10 @@
   <ion-card *ngIf="produtoSelecionado">
     <img alt="{{ produtoSelecionado.title }}" [src]="produtoSelecionado.image" />
     <ion-card-content>
+      <div class="ion-title-rate">
+        <h1>{{ produtoSelecionado?.title }}</h1>
+        <h2>{{ produtoSelecionado?.rating.rate }}</h2>
+      </div>
       <p>{{ produtoSelecionado.description }}</p>
       <p>Preço: {{ produtoSelecionado.price | currency: 'BRL' }}</p>
       <ion-button expand="full" color="primary">Adicionar ao Carrinho</ion-button>
